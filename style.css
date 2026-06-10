@@ -551,14 +551,14 @@ body.dark-mode #progress #progress-value {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.35rem;
+	width: 2.6rem;
+	height: 2.2rem;
 	background-color: #fff;
 	color: #3d3d3d;
 	border: none;
-	margin: 0;                  /* reset browser default button margin */
-	padding: 0.6rem 1rem;       /* matches .github-btn padding */
-	border-radius: 3rem;        /* matches .github-btn border-radius */
-	font-size: 0.8rem;          /* matches nav ul li a font-size */
+	margin: 0;
+	padding: 0;
+	border-radius: 3rem;
 	font-family: "Noto Sans", sans-serif;
 	cursor: pointer;
 	line-height: 1;
@@ -583,7 +583,9 @@ body.dark-mode #theme-toggle-btn:hover {
 
 /* Icon inside the button — subtle spin on hover */
 #theme-toggle-btn i {
-	font-size: 0.85rem;
+	font-size: 0.9rem;
+	width: 1em;
+	text-align: center;
 	transition: transform 0.35s ease;
 }
 #theme-toggle-btn:hover i {
