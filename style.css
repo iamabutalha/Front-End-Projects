@@ -444,6 +444,155 @@ body {
 	background-color: white;
 }
 
+/* ============================================================
+   DARK MODE — added for theme toggle feature
+   Activated by toggling the "dark-mode" class on <body>.
+   All colours are defined via CSS custom properties so every
+   component inherits the correct palette automatically.
+   ============================================================ */
+
+body.dark-mode {
+	--dm-bg: #0f172a;
+	--dm-surface: #1e293b;
+	--dm-nav: #0a0f1e;
+	--dm-text: #e2e8f0;
+	--dm-text-muted: #94a3b8;
+	--dm-border: #334155;
+	--dm-accent: #05f2c7;
+	--dm-card-bg: #1e3a5f;
+	--dm-footer: #0a0f1e;
+
+	background-color: var(--dm-bg);
+	color: var(--dm-text);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navigation */
+body.dark-mode nav {
+	background-color: var(--dm-nav);
+}
+
+/* Hero headings & paragraph */
+body.dark-mode main .left h1 {
+	color: var(--dm-accent);
+}
+body.dark-mode main .left p {
+	color: var(--dm-text-muted);
+}
+
+/* CTA button */
+body.dark-mode .github-btn-cta {
+	background-color: var(--dm-card-bg);
+	color: var(--dm-text);
+}
+body.dark-mode .github-btn-cta:hover {
+	background-color: var(--dm-accent);
+	color: var(--dm-nav);
+}
+
+/* GitHub nav button */
+body.dark-mode .github-btn {
+	background-color: var(--dm-surface);
+	color: var(--dm-text);
+}
+body.dark-mode .github-btn:hover {
+	background-color: var(--dm-accent);
+	color: var(--dm-nav);
+}
+
+/* Projects section */
+body.dark-mode .project-section {
+	background-color: var(--dm-surface);
+	border-color: var(--dm-border);
+}
+
+/* Section titles */
+body.dark-mode .title {
+	color: var(--dm-accent);
+}
+body.dark-mode .bg-title {
+	color: #1e2d40;
+}
+
+/* Search form */
+body.dark-mode .project-header #searchForm {
+	border-color: var(--dm-accent);
+	background-color: var(--dm-surface);
+}
+body.dark-mode .project-header #search {
+	background-color: var(--dm-surface);
+	color: var(--dm-text);
+}
+body.dark-mode .project-header button {
+	background-color: var(--dm-surface);
+	color: var(--dm-text);
+}
+
+/* Contributors section */
+body.dark-mode .contributors {
+	background-color: var(--dm-bg);
+	border-color: var(--dm-border);
+}
+
+/* Footer */
+body.dark-mode footer {
+	background-color: var(--dm-footer);
+}
+
+/* Scroll progress button */
+body.dark-mode #progress #progress-value {
+	background-color: var(--dm-surface);
+	color: var(--dm-accent);
+}
+
+/* ---- Theme Toggle Button ---- */
+/* Sits inline with the other nav links; styled to match .github-btn */
+#theme-toggle-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	background-color: #fff;
+	color: #3d3d3d;
+	border: none;
+	margin: 0;                  /* reset browser default button margin */
+	padding: 0.6rem 1rem;       /* matches .github-btn padding */
+	border-radius: 3rem;        /* matches .github-btn border-radius */
+	font-size: 0.8rem;          /* matches nav ul li a font-size */
+	font-family: "Noto Sans", sans-serif;
+	cursor: pointer;
+	line-height: 1;
+	vertical-align: middle;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#theme-toggle-btn:hover {
+	background-color: #05f2c7;
+	color: #0d4360;
+}
+
+/* Dark mode state for the button itself */
+body.dark-mode #theme-toggle-btn {
+	background-color: #1e293b;
+	color: #e2e8f0;
+}
+body.dark-mode #theme-toggle-btn:hover {
+	background-color: #05f2c7;
+	color: #0a0f1e;
+}
+
+/* Icon inside the button — subtle spin on hover */
+#theme-toggle-btn i {
+	font-size: 0.85rem;
+	transition: transform 0.35s ease;
+}
+#theme-toggle-btn:hover i {
+	transform: rotate(15deg);
+}
+/* ============================================================
+   END DARK MODE
+   ============================================================ */
+
 #progress {
 	cursor: pointer;
 	position: fixed;
@@ -492,6 +641,13 @@ nav img {
 nav ul {
 	display: flex;
 	list-style: none;
+	gap: 1.5rem;
+}
+
+/* CHANGE: wrapper that keeps the nav links and theme button in one aligned row */
+.nav-right {
+	display: flex;
+	align-items: center;
 	gap: 1.5rem;
 }
 
